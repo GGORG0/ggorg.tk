@@ -22,6 +22,11 @@ export default function Page({ children, pfp = true, title = "GGORG" }: PageProp
                           bg-red-800 sm:bg-red-500
                           md:bg-orange-800 lg:bg-orange-500
                           xl:bg-blue-800 2xl:bg-blue-500"/> */}
+          
+          {
+            process.env.NODE_ENV === "development" &&
+            <div className="relative flex items-center justify-center my-1 text-white bg-red-600 rounded-xl mx-2">DEV</div>
+          }
 
           <Link href="/"><a><SideBarIcon icon={<FaHome />} text="Home" /></a></Link>
           <Link href="/about"><a><SideBarIcon icon={<FaInfoCircle />} text="About me" /></a></Link>
