@@ -1,5 +1,5 @@
 import SideBar from "../SideBar/SideBar";
-import { FaHome, FaGamepad, FaInfoCircle, FaCode } from "react-icons/fa";
+import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import Link from "next/link";
 import SideBarIcon from "../SideBar/SideBarIcon";
 import ProfilePicture from "../Utils/ProfilePicture";
@@ -26,8 +26,19 @@ export default function Page({ children, pfp = true, title = "GGORG" }: PageProp
           <Link href="/"><a><SideBarIcon icon={<FaHome />} text="Home" /></a></Link>
           <Link href="/about"><a><SideBarIcon icon={<FaInfoCircle />} text="About me" /></a></Link>
           <Link href="/projects"><a><SideBarIcon icon={<FaCode />} text="Projects" /></a></Link>
+
           <SideBarSpacer/>
+
           <Link href="/clicker"><a><SideBarIcon icon={<FaGamepad />} text="Simple clicker" /></a></Link>
+
+          <SideBarSpacer/>
+
+          <a href="//gh.ggorg.tk/ggorg.tk"><SideBarIcon icon={<FaCodeBranch />} text="Source code" /></a>
+
+          <SideBarSpacer/>
+
+          <a href={`//discord.com/users/${process.env.NEXT_PUBLIC_DISCORD_ID}`}><SideBarIcon icon={<FaDiscord />} text="Discord" /></a>
+          <a href={`//t.me/GGORG0`}><SideBarIcon icon={<FaTelegramPlane />} text="Telegram" /></a>
         </SideBar>
         <div className="fixed z-0 flex flex-col items-center justify-center h-full w-full m-auto px-0">
           { pfp && <ProfilePicture /> }
