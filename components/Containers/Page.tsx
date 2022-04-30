@@ -1,5 +1,5 @@
 import SideBar from "../SideBar/SideBar";
-import { FaHome, FaGamepad, FaInfoCircle, FaCode } from "react-icons/fa";
+import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane, FaSpotify, FaTwitter, FaGithub, FaGitlab, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import SideBarIcon from "../SideBar/SideBarIcon";
 import ProfilePicture from "../Utils/ProfilePicture";
@@ -22,12 +22,33 @@ export default function Page({ children, pfp = true, title = "GGORG" }: PageProp
                           bg-red-800 sm:bg-red-500
                           md:bg-orange-800 lg:bg-orange-500
                           xl:bg-blue-800 2xl:bg-blue-500"/> */}
+          
+          {
+            process.env.NODE_ENV === "development" &&
+            <div className="relative flex items-center justify-center my-1 text-white bg-red-600 rounded-xl mx-2">DEV</div>
+          }
 
           <Link href="/"><a><SideBarIcon icon={<FaHome />} text="Home" /></a></Link>
           <Link href="/about"><a><SideBarIcon icon={<FaInfoCircle />} text="About me" /></a></Link>
           <Link href="/projects"><a><SideBarIcon icon={<FaCode />} text="Projects" /></a></Link>
+
           <SideBarSpacer/>
+
           <Link href="/clicker"><a><SideBarIcon icon={<FaGamepad />} text="Simple clicker" /></a></Link>
+
+          <SideBarSpacer/>
+
+          <a href={`//discord.com/users/${process.env.NEXT_PUBLIC_DISCORD_ID}`}><SideBarIcon icon={<FaDiscord />} text="Discord" /></a>
+          <a href={`//t.me/${process.env.NEXT_PUBLIC_TELEGRAM_USER}`}><SideBarIcon icon={<FaTelegramPlane />} text="Telegram" /></a>
+          <a href={`//open.spotify.com/user/${process.env.NEXT_PUBLIC_SPOTIFY_ID}`}><SideBarIcon icon={<FaSpotify />} text="Spotify" /></a>
+          <a href={`//twitter.com/${process.env.NEXT_PUBLIC_TWITTER_USER}`}><SideBarIcon icon={<FaTwitter />} text="Twitter" /></a>
+          <a href="//gh.ggorg.tk"><SideBarIcon icon={<FaGithub />} text="GitHub" /></a>
+          <a href={`//gitlab.com/${process.env.NEXT_PUBLIC_GITLAB_USER}`}><SideBarIcon icon={<FaGitlab />} text="GitLab" /></a>
+          <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}><SideBarIcon icon={<FaEnvelope />} text="Email" /></a>
+
+          <SideBarSpacer/>
+
+          <a href="//gh.ggorg.tk/ggorg.tk"><SideBarIcon icon={<FaCodeBranch />} text="Source code" /></a>
         </SideBar>
         <div className="fixed z-0 flex flex-col items-center justify-center h-full w-full m-auto px-0">
           { pfp && <ProfilePicture /> }
