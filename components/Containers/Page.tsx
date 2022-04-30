@@ -1,5 +1,5 @@
 import SideBar from "../SideBar/SideBar";
-import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane, FaSpotify, FaTwitter, FaGithub, FaGitlab } from "react-icons/fa";
+import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane, FaSpotify, FaTwitter, FaGithub, FaGitlab, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import SideBarIcon from "../SideBar/SideBarIcon";
 import ProfilePicture from "../Utils/ProfilePicture";
@@ -44,6 +44,7 @@ export default function Page({ children, pfp = true, title = "GGORG" }: PageProp
           <a href={`//twitter.com/${process.env.NEXT_PUBLIC_TWITTER_USER}`}><SideBarIcon icon={<FaTwitter />} text="Twitter" /></a>
           <a href="//gh.ggorg.tk"><SideBarIcon icon={<FaGithub />} text="GitHub" /></a>
           <a href={`//gitlab.com/${process.env.NEXT_PUBLIC_GITLAB_USER}`}><SideBarIcon icon={<FaGitlab />} text="GitLab" /></a>
+          <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}><SideBarIcon icon={<FaEnvelope />} text="Email" /></a>
 
           <SideBarSpacer/>
 
