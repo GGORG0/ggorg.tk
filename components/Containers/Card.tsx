@@ -10,7 +10,6 @@ interface CardProps {
 }
 
 export default function Card({ children, title = "", textOnly = true, href = "", hrefLocal = false }: CardProps) {
-  console.log(children);
   return (
     <div className="bg-gray-600 m-1 md:m-2 p-1 md:p-3 rounded-xl drop-shadow-lg hover:scale-105 transition-all">
       {title &&
