@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Card from "../components/Containers/Card";
 import Page from "../components/Containers/Page";
 import User from "../components/Discord/User";
 
