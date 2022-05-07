@@ -13,8 +13,8 @@ export default function User({ userId }: UserProps) {
   });
   return (
     <>
-      <Card textOnly={false}>
-        <div className="flex items-center justify-center w-64 h-64">
+      <Card textOnly={false} title={lanyard.error ? "" : lanyard.data.data.discord_user.username}>
+        <div className="flex items-center justify-center m-1 md:m-2">
           {lanyard.isValidating
             ? <Spinner />
             :
@@ -24,7 +24,7 @@ export default function User({ userId }: UserProps) {
                 :
                 (
                   <>
-                    <div className="relative w-64 h-64">
+                    <div className="relative w-32 h-32 md:w-64 md:h-64">
                       <Image
                         src={`https://cdn.discordapp.com/avatars/${lanyard.data.data.discord_user.id}/${lanyard.data.data.discord_user.avatar}.png?size=512`}
                         className="rounded-full"
@@ -32,8 +32,6 @@ export default function User({ userId }: UserProps) {
                         alt="pfp"
                       />
                     </div>
-
-                    <p>{lanyard.data.data.discord_user.username}</p>
                   </>
                 )
             )
