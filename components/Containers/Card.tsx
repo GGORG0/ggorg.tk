@@ -13,7 +13,8 @@ export default function Card({ children, title = "", textOnly = true, href = "",
   return (
     <div className="bg-gray-600 m-1 md:m-2 p-1 md:p-3 rounded-xl drop-shadow-lg hover:scale-105 transition-all">
       {title &&
-        <p className="flex justify-center text-xl md:text-2xl font-bold mb-1 drop-shadow-lg">{title}
+        <p className="flex justify-center text-xl md:text-2xl font-bold mb-1 drop-shadow-lg">
+          {title}
           {
             href !== ""
               ?
