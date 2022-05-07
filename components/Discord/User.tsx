@@ -16,6 +16,8 @@ export default function User({ userId }: UserProps) {
       <Card
         textOnly={false}
         title={lanyard.error || lanyard.isValidating ? "" : lanyard.data.data.discord_user.username}
+        href={lanyard.error || lanyard.isValidating ? "" :
+          (lanyard.data.data.kv.website ? lanyard.data.data.kv.website : `//discord.com/users/${lanyard.data.data.discord_user.id}`)}
       >
         <div className="flex items-center justify-center m-1 md:m-2">
           {lanyard.isValidating
