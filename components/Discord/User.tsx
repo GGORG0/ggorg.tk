@@ -13,7 +13,10 @@ export default function User({ userId }: UserProps) {
   });
   return (
     <>
-      <Card textOnly={false} title={lanyard.error ? "" : lanyard.data.data.discord_user.username}>
+      <Card
+        textOnly={false}
+        title={lanyard.error || lanyard.isValidating ? "" : lanyard.data.data.discord_user.username}
+      >
         <div className="flex items-center justify-center m-1 md:m-2">
           {lanyard.isValidating
             ? <Spinner />
