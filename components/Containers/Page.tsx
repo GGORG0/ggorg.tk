@@ -1,5 +1,5 @@
 import SideBar from "../SideBar/SideBar";
-import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane, FaSpotify, FaTwitter, FaGithub, FaGitlab, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaGamepad, FaInfoCircle, FaCode, FaCodeBranch, FaDiscord, FaTelegramPlane, FaSpotify, FaTwitter, FaGithub, FaGitlab, FaEnvelope, FaUserFriends } from "react-icons/fa";
 import Link from "next/link";
 import SideBarIcon from "../SideBar/SideBarIcon";
 import ProfilePicture from "../Utils/ProfilePicture";
@@ -31,6 +31,7 @@ export default function Page({ children, pfp = true, title = "GGORG" }: PageProp
           <Link href="/"><a><SideBarIcon icon={<FaHome />} text="Home" /></a></Link>
           <Link href="/about"><a><SideBarIcon icon={<FaInfoCircle />} text="About me" /></a></Link>
           <Link href="/projects"><a><SideBarIcon icon={<FaCode />} text="Projects" /></a></Link>
+          <Link href="/friends"><a><SideBarIcon icon={<FaUserFriends />} text="Friends" /></a></Link>
 
           <SideBarSpacer/>
 
