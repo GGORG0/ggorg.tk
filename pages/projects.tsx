@@ -2,7 +2,7 @@ import Head from "next/head";
 import Card from "../components/Containers/Card";
 import Page from "../components/Containers/Page";
 
-export default function About() {
+export default function Projects() {
   return (
     <>
       <Head>
